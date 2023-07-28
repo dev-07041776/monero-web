@@ -3,8 +3,9 @@ import { Alert, Button } from "@react95/core";
 import { useClippy } from "@react95/clippy";
 import Layout from "./components/Layout";
 import gayFrogsSfx from "./assets/mp3/gay-frogs.mp3";
-
+import yRUGaySfx from "./assets/mp3/why-are-you-gay.mp3";
 const gayFrogsSound = new Audio(gayFrogsSfx);
+const yRUGaySound = new Audio(yRUGaySfx);
 
 function App() {
   const [fakeGayShown, toggleFakeGayShown] = React.useState(true);
@@ -54,9 +55,10 @@ function App() {
             }}
           >
             <Button
-              onClick={() => {
+              onClick={async () => {
                 toggleFakeGayShown(false);
                 toggleBsod(false);
+                await gayFrogsSound.play();
               }}
             >
               I AM GAY
@@ -85,7 +87,10 @@ function App() {
             },
             {
               value: "REAL",
-              onClick: () => toggleBsod(true),
+              onClick: async () => {
+                await yRUGaySound.play();
+                toggleBsod(true);
+              },
             },
           ]}
         />
