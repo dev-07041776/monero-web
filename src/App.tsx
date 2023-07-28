@@ -71,16 +71,16 @@ function App() {
       {bsod && <BSOD />}
       {fakeGayShown && (
         <Alert
-          title="Fake or Gay?"
-          message="Moon landing, fake or gay?"
+          title="Do you accept the truth?"
+          message="Moon landing, fake and gay or real?"
           closeAlert={() => toggleFakeGayShown(false)}
           buttons={[
             {
-              value: "FAKE",
+              value: "FAKE & GAY",
               onClick: () => toggleFakeGayShown(false),
             },
             {
-              value: "GAY",
+              value: "REAL",
               onClick: () => toggleBsod(true),
             },
           ]}
