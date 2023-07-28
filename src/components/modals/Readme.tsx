@@ -10,7 +10,8 @@ const Readme: FC<ReadmeProps> = ({}) => {
         <h1 style={{ marginTop: 0 }}>🇳🇬🇿🇼🇬🇭 ATTENTION 🇬🇭🇿🇼🇳🇬</h1>
         <p>
           This website is a community contribution made with love by Monero
-          Mandela, world acclaimed autist, retard, and philanthropist.
+          Mandela -- world acclaimed autist, retard, visionary, and
+          philanthropist.
         </p>
         <p>
           If sers like this contribution, the Honorable Monero Mandela will
