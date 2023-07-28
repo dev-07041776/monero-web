@@ -22,6 +22,7 @@ import Lemmings from "../../../modals/Lemmings";
 import Quake from "../../../modals/Quake";
 import Command2 from "../../../modals/Command2";
 import Quake2 from "../../../modals/Quake2";
+import Readme from "../../../modals/Readme";
 
 interface DesktopProps {}
 
@@ -34,8 +35,8 @@ export const desktopItems = [
     shown: false,
     url: undefined,
     children: <AboutMonero />,
-    height: isMobile ? 400 : 650,
-    width: isMobile ? 350 : 650,
+    height: isMobile ? 400 : 600,
+    width: isMobile ? 350 : 800,
     show: isMobile ? true : true,
   },
   {
@@ -44,8 +45,8 @@ export const desktopItems = [
     shown: false,
     url: undefined,
     children: <FlatEarth />,
-    height: isMobile ? 400 : 650,
-    width: isMobile ? 350 : 650,
+    height: isMobile ? 360 : 620,
+    width: isMobile ? 350 : 600,
     show: isMobile ? true : true,
   },
   {
@@ -54,8 +55,8 @@ export const desktopItems = [
     shown: false,
     url: undefined,
     children: <FakeMoon />,
-    height: isMobile ? 400 : 650,
-    width: isMobile ? 350 : 650,
+    height: isMobile ? 360 : 620,
+    width: isMobile ? 350 : 600,
     show: isMobile ? true : true,
   },
   {
@@ -92,13 +93,14 @@ export const desktopItems = [
     url: "https://twitter.com/fefmlmku1984",
   },
   {
-    title: "Readme.txt",
+    title: "ReadMe.txt",
     icon: <Notepad2 />,
     shown: false,
     url: undefined,
-    height: isMobile ? 400 : 650,
-    width: isMobile ? 300 : 650,
+    height: isMobile ? 400 : "",
+    width: isMobile ? 350 : 800,
     show: isMobile ? true : true,
+    children: <Readme />,
   },
 
   {
@@ -163,7 +165,7 @@ export const desktopItems = [
   {
     title: "Lemmings",
     icon: <img src={lemmingsImg} alt="Lemmings" />,
-    shown: true,
+    shown: false,
     url: undefined,
     children: <Lemmings />,
     height: isMobile ? 250 : 550,

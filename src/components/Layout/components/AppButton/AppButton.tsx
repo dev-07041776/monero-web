@@ -40,6 +40,7 @@ const AppButton: FC<AppButtonProps> = ({
       </AppButtonSC>
       {showModal && (
         <Modal
+          className="modal"
           width={width}
           height={height}
           icon={icon}
@@ -47,7 +48,7 @@ const AppButton: FC<AppButtonProps> = ({
           closeModal={handleCloseModal}
           children={children}
           defaultPosition={{
-            x: 0,
+            x: -12,
             y: 24,
           }}
           //   buttons={[

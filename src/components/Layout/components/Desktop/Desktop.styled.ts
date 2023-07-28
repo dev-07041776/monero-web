@@ -23,6 +23,51 @@ export const DesktopSC = styled.div`
     width: 100%;
     max-width: 200px;
   }
+
+  .readme {
+    div {
+      padding: 24px 24px;
+    }
+    p {
+      font-size: 1.25rem;
+    }
+
+    @media only screen and (max-width: 1024px) {
+      div {
+        padding: 12px 12px;
+      }
+      a {
+        font-size: 12px !important;
+      }
+    }
+  }
+
+  .about {
+    div {
+      padding: 24px 24px;
+    }
+    .images {
+      display: flex;
+    }
+    img {
+      max-width: 300px;
+    }
+    p {
+      font-size: 1.25rem;
+    }
+
+    @media only screen and (max-width: 1024px) {
+      div {
+        padding: 12px 12px;
+      }
+      img {
+        max-width: 140px;
+      }
+      h1 {
+        font-size: 1rem;
+      }
+    }
+  }
 `;
 
 export const DesktopIconSC = styled.img``;
