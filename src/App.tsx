@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import styled from "styled-components";
-import { Alert, Button, TaskBar } from "@react95/core";
+import { Alert, Button } from "@react95/core";
 import { useClippy } from "@react95/clippy";
-import logo from "./windows95_logo.png";
 import Layout from "./components/Layout";
+import gayFrogsSfx from "./assets/mp3/gay-frogs.mp3";
+
+const gayFrogsSound = new Audio(gayFrogsSfx);
 
 function App() {
   const [fakeGayShown, toggleFakeGayShown] = React.useState(true);
@@ -77,7 +78,10 @@ function App() {
           buttons={[
             {
               value: "FAKE & GAY",
-              onClick: () => toggleFakeGayShown(false),
+              onClick: async () => {
+                await gayFrogsSound.play();
+                toggleFakeGayShown(false);
+              },
             },
             {
               value: "REAL",
