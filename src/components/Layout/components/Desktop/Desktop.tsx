@@ -151,7 +151,7 @@ export const desktopItems = [
     show: isMobile ? true : true,
   },
   {
-    title: "Worms Armagheddon",
+    title: "Worms Armageddon",
     icon: <img src={wormsImg} alt="Worms" />,
     shown: false,
     url: undefined,
