@@ -1,7 +1,13 @@
 import React, { FC } from "react";
 import { DesktopIconSC, DesktopSC } from "./Desktop.styled";
 import AppButton from "../AppButton";
-import { Earth, InfoBubble, Isign324001, Notepad2 } from "@react95/icons";
+import {
+  Earth,
+  InfoBubble,
+  Isign324001,
+  Mspaint,
+  Notepad2,
+} from "@react95/icons";
 import uniswapImage from "../../../../assets/png/uniswap.png";
 import dextoolsImage from "../../../../assets/png/dextools.png";
 import telegramImage from "../../../../assets/png/telegram.png";
@@ -9,6 +15,7 @@ import twitterImage from "../../../../assets/png/twitter.png";
 import img1984 from "../../../../assets/jpg/1984.jpeg";
 import quake1Image from "../../../../assets/png/games/quake1.png";
 import quake2Image from "../../../../assets/png/games/quake2.png";
+import unrealImage from "../../../../assets/png/games/unreal-tournament.png";
 import wormsImg from "../../../../assets/png/games/worms.png";
 import ccImg from "../../../../assets/png/games/cc.png";
 import cc2Img from "../../../../assets/png/games/cc2.png";
@@ -23,6 +30,8 @@ import Quake from "../../../modals/Quake";
 import Command2 from "../../../modals/Command2";
 import Quake2 from "../../../modals/Quake2";
 import Readme from "../../../modals/Readme";
+import UnrealTournament from "../../../modals/UnrealTournament";
+import Paint from "../../../modals/Paint";
 
 interface DesktopProps {}
 
@@ -60,7 +69,7 @@ export const desktopItems = [
     show: isMobile ? true : true,
   },
   {
-    title: "Uniswap",
+    title: "Buy $MONERO",
     icon: <DesktopIconSC src={uniswapImage} />,
     shown: false,
     url: "https://app.uniswap.org/#/swap?&chain=mainnet&use=v2&outputCurrency=0x6A8A637331801981A0FB29aacc3afa732b072d55",
@@ -102,7 +111,6 @@ export const desktopItems = [
     show: isMobile ? true : true,
     children: <Readme />,
   },
-
   {
     title: "1984.exe",
     icon: <DesktopIconSC src={img1984} />,
@@ -128,6 +136,16 @@ export const desktopItems = [
     shown: false,
     url: undefined,
     children: <Quake2 />,
+    height: isMobile ? 300 : 600,
+    width: isMobile ? 350 : 800,
+    show: isMobile ? true : true,
+  },
+  {
+    title: "Unreal Tournament",
+    icon: <img src={unrealImage} alt="Img" />,
+    shown: false,
+    url: undefined,
+    children: <UnrealTournament />,
     height: isMobile ? 300 : 600,
     width: isMobile ? 350 : 800,
     show: isMobile ? true : true,
@@ -171,6 +189,16 @@ export const desktopItems = [
     height: isMobile ? 250 : 550,
     width: isMobile ? 350 : 800,
     show: isMobile ? true : true,
+  },
+  {
+    title: "Paint",
+    icon: <Mspaint />,
+    shown: false,
+    url: undefined,
+    height: isMobile ? 400 : 600,
+    width: isMobile ? 350 : 800,
+    show: isMobile ? true : true,
+    children: <Paint />,
   },
 ];
 

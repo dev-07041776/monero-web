@@ -12,8 +12,9 @@ export const AppLinkSC = styled.div`
     outline: none;
     box-shadow: none;
     gap: 0.25rem;
-    width:80px
-
+    width: 80px;
+    text-align: center;
+    text-decoration: none;
     &:focus {
       outline: none;
       box-shadow: none;
@@ -26,7 +27,7 @@ export const AppLinkSC = styled.div`
 
     img {
       max-width: 65px;
-      max-height:80px;
+      max-height: 80px;
       height: auto;
       padding: 0.25rem;
     }

@@ -1,12 +1,10 @@
 import React, { FC } from "react";
 
-interface LemmingsProps {}
-
-const Lemmings: FC<LemmingsProps> = ({}) => {
+const UnrealTournament: FC = ({}) => {
   return (
     <iframe
       id="Command and Conquer"
-      src="https://emupedia.net/emupedia-game-lemmings1/?version=1&difficulty=1&level=1&speed=1&cheat=false"
+      src="https://emupedia.net/emupedia-game-unreal-tournament/"
       frameBorder="0"
       height={"100%"}
       allowTransparency={true}
@@ -16,4 +14,4 @@ const Lemmings: FC<LemmingsProps> = ({}) => {
   );
 };
 
-export default Lemmings;
+export default UnrealTournament;

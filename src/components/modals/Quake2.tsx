@@ -10,7 +10,7 @@ const Quake2: FC<QuakeProps> = ({}) => {
       frameBorder="0"
       height={"100%"}
       allowTransparency={true}
-      allow="autoplay; fullscreen; accelerometer; gyroscope; geolocation; microphone; camera; midi; encrypted-media; clipboard-read; clipboard-write"
+      allow="accelerometer; gyroscope; geolocation; microphone; camera; midi; encrypted-media; clipboard-read; clipboard-write"
       sandbox="allow-forms allow-downloads allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
     />
   );
