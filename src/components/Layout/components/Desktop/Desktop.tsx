@@ -20,6 +20,7 @@ import unrealImage from "../../../../assets/png/games/unreal-tournament.png";
 import wormsImg from "../../../../assets/png/games/worms.png";
 import ccImg from "../../../../assets/png/games/cc.png";
 import cc2Img from "../../../../assets/png/games/cc2.png";
+import cStrike from "../../../../assets/png/games/cstrike.png";
 import lemmingsImg from "../../../../assets/png/games/lemmings.png";
 import AboutMonero from "../../../modals/AboutMonero";
 import FlatEarth from "../../../modals/FlatEarth";
@@ -35,6 +36,7 @@ import UnrealTournament from "../../../modals/UnrealTournament";
 import Paint from "../../../modals/Paint";
 import Milkers from "../../../modals/Milkers";
 import Sonic from "../../../modals/Sonic";
+import CartoonStrike from "../../../modals/CartoonStrike";
 
 interface DesktopProps {}
 
@@ -143,16 +145,6 @@ export const desktopItems = [
     show: isMobile ? true : true,
   },
   {
-    title: "Quake 1",
-    icon: <img src={quake1Image} alt="Quake 1 Img" />,
-    shown: false,
-    url: undefined,
-    children: <Quake />,
-    height: isMobile ? 300 : 600,
-    width: isMobile ? 350 : 800,
-    show: isMobile ? false : true,
-  },
-  {
     title: "Sonic Multiplayer",
     icon: <img src={sonicImage} alt="Sonic" />,
     shown: false,
@@ -162,6 +154,27 @@ export const desktopItems = [
     width: isMobile ? 350 : 900,
     show: isMobile ? false : true,
   },
+  {
+    title: "CStrike",
+    icon: <img src={cStrike} alt="Cartoon Strike" />,
+    shown: false,
+    url: undefined,
+    children: <CartoonStrike />,
+    height: isMobile ? 300 : 655,
+    width: isMobile ? 350 : 960,
+    show: isMobile ? false : true,
+  },
+  {
+    title: "Quake 1",
+    icon: <img src={quake1Image} alt="Quake 1 Img" />,
+    shown: false,
+    url: undefined,
+    children: <Quake />,
+    height: isMobile ? 300 : 600,
+    width: isMobile ? 350 : 800,
+    show: isMobile ? false : true,
+  },
+
   {
     title: "Quake 2",
     icon: <img src={quake2Image} alt="Quake 2 Img" />,
@@ -198,16 +211,6 @@ export const desktopItems = [
     shown: false,
     url: undefined,
     children: <Command />,
-    height: isMobile ? 300 : 600,
-    width: isMobile ? 350 : 800,
-    show: isMobile ? false : true,
-  },
-  {
-    title: "Yuri's Revenge",
-    icon: <img src={cc2Img} alt="C&C2: Yuri's Revenge" />,
-    shown: false,
-    url: undefined,
-    children: <Command2 />,
     height: isMobile ? 300 : 600,
     width: isMobile ? 350 : 800,
     show: isMobile ? false : true,
