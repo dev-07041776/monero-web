@@ -237,7 +237,14 @@ const Desktop: FC<DesktopProps> = ({}) => {
           </>
         ))}
       </div>
-      <img src={tickerMonero} className="ticker" />
+      <a
+        href="https://app.uniswap.org/#/swap?&chain=mainnet&use=v2&outputCurrency=0x6A8A637331801981A0FB29aacc3afa732b072d55"
+        className="ticker"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={tickerMonero} />
+      </a>
     </DesktopSC>
   );
 };

@@ -13,7 +13,6 @@ export const DesktopSC = styled.div`
 
   .ticker {
     max-width: 200px;
-
     position: absolute;
     bottom: 0%;
     transform: translateY(-50%);
@@ -21,6 +20,11 @@ export const DesktopSC = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
   }
 
   @media only screen and (max-width: 1024px) {
