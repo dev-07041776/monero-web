@@ -14,6 +14,14 @@ export const AppButtonSC = styled(Button)`
   max-width: 80px;
   padding: 0px;
 
+  &:active {
+    padding: 0;
+    outline: rgb(0, 0, 0) dotted 0px;
+    outline-offset: 0px;
+    box-shadow: rgb(134, 138, 142) 0px 0px 0px 0px inset,
+      rgb(0, 0, 0) 0px 0px 0px 0px;
+  }
+
   &:focus {
     outline: none;
     box-shadow: none;
