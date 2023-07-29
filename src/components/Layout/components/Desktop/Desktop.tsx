@@ -15,6 +15,7 @@ import twitterImage from "../../../../assets/png/twitter.png";
 import milkersImage from "../../../../assets/png/milkers.png";
 import tickerMonero from "../../../../assets/gif/tickermonero.gif";
 import fakelandingImage from "../../../../assets/png/landingicon.png";
+import titanicScam from "../../../../assets/png/titanic-scam.png";
 import img1984 from "../../../../assets/jpg/1984.jpeg";
 import quake1Image from "../../../../assets/png/games/quake1.png";
 import quake2Image from "../../../../assets/png/games/quake2.png";
@@ -130,6 +131,15 @@ export const desktopItems = [
     icon: <DesktopIconSC src={img1984} />,
     shown: false,
     url: "https://www.youtube.com/watch?v=1131xTaVo8A",
+    height: isMobile ? 400 : 650,
+    width: isMobile ? 300 : 650,
+    show: isMobile ? true : true,
+  },
+  {
+    title: "titanic.mp4",
+    icon: <DesktopIconSC src={titanicScam} />,
+    shown: false,
+    url: "https://www.youtube.com/watch?v=nj6Hqwmf77A",
     height: isMobile ? 400 : 650,
     width: isMobile ? 300 : 650,
     show: isMobile ? true : true,
