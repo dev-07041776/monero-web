@@ -1,18 +1,13 @@
 import React, { FC } from "react";
 import { DesktopIconSC, DesktopSC } from "./Desktop.styled";
 import AppButton from "../AppButton";
-import {
-  Earth,
-  InfoBubble,
-  Isign324001,
-  Mspaint,
-  Notepad2,
-} from "@react95/icons";
+import { Earth, InfoBubble, Mspaint, Notepad2 } from "@react95/icons";
 import uniswapImage from "../../../../assets/png/uniswap.png";
 import dextoolsImage from "../../../../assets/png/dextools.png";
 import telegramImage from "../../../../assets/png/telegram.png";
 import twitterImage from "../../../../assets/png/twitter.png";
 import milkersImage from "../../../../assets/png/milkers.png";
+import mainLogo from "../../../../assets/png/logo.png";
 import tickerMonero from "../../../../assets/gif/tickermonero.gif";
 import fakelandingImage from "../../../../assets/png/landingicon.png";
 import titanicScam from "../../../../assets/png/titanic-scam.png";
@@ -45,7 +40,7 @@ const isMobile = window.innerWidth < 768;
 export const desktopItems = [
   {
     title: "About $MONERO",
-    icon: <InfoBubble />,
+    icon: <DesktopIconSC src={mainLogo} />,
     shown: false,
     url: undefined,
     children: <AboutMonero />,
@@ -253,7 +248,8 @@ const Desktop: FC<DesktopProps> = ({}) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src={tickerMonero} />
+        <img src={mainLogo} className="logo" />
+        <img src={tickerMonero} className="ticker-text" />
       </a>
     </DesktopSC>
   );

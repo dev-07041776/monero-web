@@ -14,15 +14,24 @@ export const DesktopSC = styled.div`
   .ticker {
     max-width: 200px;
     position: absolute;
-    bottom: 0%;
-    transform: translateY(-50%);
-    right: 0%;
+    bottom: 50px;
+    right: 24px;
     width: 100%;
     display: flex;
     align-items: center;
     cursor: pointer;
+    flex-direction: column;
+    z-index: 1;
 
-    img {
+    .logo {
+      width: 75px;
+
+      @media only screen and (max-width: 1024px) {
+        display: none;
+      }
+    }
+
+    .ticker-text {
       width: 100%;
     }
   }
@@ -39,6 +48,8 @@ export const DesktopSC = styled.div`
     height: 100%;
     width: 100%;
     max-width: 200px;
+    z-index: 3;
+    position: relative;
   }
 
   .readme {
