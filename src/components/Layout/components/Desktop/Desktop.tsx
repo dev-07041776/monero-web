@@ -170,7 +170,7 @@ export const desktopItems = [
     shown: false,
     url: undefined,
     children: <Worms />,
-    height: isMobile ? 300 : 600,
+    height: isMobile ? 300 : 700,
     width: isMobile ? 350 : 800,
     show: isMobile ? false : true,
   },
