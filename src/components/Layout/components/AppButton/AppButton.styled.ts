@@ -44,4 +44,14 @@ export const AppButtonSC = styled(Button)`
     color: white;
     font-size: 1rem;
   }
+
+  @media only screen and (max-width: 1281px) {
+    img {
+      width: 55px;
+    }
+
+    .text {
+      font-size: 0.9rem;
+    }
+  }
 `;
