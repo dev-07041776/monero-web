@@ -9,6 +9,19 @@ export const DesktopSC = styled.div`
   height: 100%;
   background-image: url(${bgImg});
   background-size: cover;
+  position: relative;
+
+  .ticker {
+    max-width: 200px;
+
+    position: absolute;
+    bottom: 0%;
+    transform: translateY(-50%);
+    right: 0%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
 
   @media only screen and (max-width: 1024px) {
     background-size: contain;
@@ -43,6 +56,19 @@ export const DesktopSC = styled.div`
   }
 
   .about {
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      padding: 0px;
+
+      img {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
     div {
       padding: 24px 24px;
     }
@@ -65,6 +91,23 @@ export const DesktopSC = styled.div`
       }
       h1 {
         font-size: 1rem;
+      }
+    }
+  }
+
+  .milkers {
+    .pron-images {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .title {
+      img {
+        width: 100%;
       }
     }
   }

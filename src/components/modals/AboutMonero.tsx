@@ -2,6 +2,8 @@ import { Frame } from "@react95/core";
 import React, { FC } from "react";
 import imgMonero from "../../assets/jpg/monero.jpg";
 import imgBelieve from "../../assets/gif/believe.gif";
+import textFirstLine from "../../assets/gif/flatearthflaming.gif";
+import textSecondLine from "../../assets/gif/tickermoneroflaming.gif";
 
 interface AboutMoneroProps {}
 
@@ -9,13 +11,14 @@ const AboutMonero: FC<AboutMoneroProps> = ({}) => {
   return (
     <Frame boxShadow="in" bg="white" className="about">
       <div>
-        <h1 style={{ marginTop: 0 }}>
-          The FlatEarthFakeMoonLandingMKUltra1984 (Ticker: $MONERO) Project
-        </h1>
-        <div className="images">
-          <img src={imgMonero} alt="img" />
-          <img src={imgBelieve} alt="img" />
+        <div className="title">
+          <img src={textFirstLine} alt="img" />
+          <img src={textSecondLine} alt="img" />
         </div>
+
+        <a href="https://app.uniswap.org/#/swap?&chain=mainnet&use=v2&outputCurrency=0x6A8A637331801981A0FB29aacc3afa732b072d55">
+          BUY $MONERO
+        </a>
 
         <p>
           In the realm of flat Earth truths, a web of deception has woven itself
@@ -29,8 +32,10 @@ const AboutMonero: FC<AboutMoneroProps> = ({}) => {
           perception of reality. The moon landing was nothing more than an
           elaborate ruse, orchestrated by the powers that be to perpetuate the
           spherical Earth myth and further their control over the masses.
-          <br />
-          <br />
+          <div className="images">
+            <img src={imgMonero} alt="img" />
+            <img src={imgBelieve} alt="img" />
+          </div>
           A haunting chapter in the annals of conspiracy theories lies in the
           dark history of the CIA's MK Ultra program. Allegedly, this
           clandestine operation delved into mind control experiments,

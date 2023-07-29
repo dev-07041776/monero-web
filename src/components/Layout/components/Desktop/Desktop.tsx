@@ -12,6 +12,9 @@ import uniswapImage from "../../../../assets/png/uniswap.png";
 import dextoolsImage from "../../../../assets/png/dextools.png";
 import telegramImage from "../../../../assets/png/telegram.png";
 import twitterImage from "../../../../assets/png/twitter.png";
+import milkersImage from "../../../../assets/png/milkers.png";
+import tickerMonero from "../../../../assets/gif/tickermonero.gif";
+import fakelandingImage from "../../../../assets/png/landingicon.png";
 import img1984 from "../../../../assets/jpg/1984.jpeg";
 import quake1Image from "../../../../assets/png/games/quake1.png";
 import quake2Image from "../../../../assets/png/games/quake2.png";
@@ -32,6 +35,7 @@ import Quake2 from "../../../modals/Quake2";
 import Readme from "../../../modals/Readme";
 import UnrealTournament from "../../../modals/UnrealTournament";
 import Paint from "../../../modals/Paint";
+import Milkers from "../../../modals/Milkers";
 
 interface DesktopProps {}
 
@@ -60,12 +64,22 @@ export const desktopItems = [
   },
   {
     title: "fake_moon.rar",
-    icon: <Isign324001 />,
+    icon: <DesktopIconSC src={fakelandingImage} />,
     shown: false,
     url: undefined,
     children: <FakeMoon />,
     height: isMobile ? 360 : 620,
     width: isMobile ? 350 : 600,
+    show: isMobile ? true : true,
+  },
+  {
+    title: "pr0n_milk3rs",
+    icon: <DesktopIconSC src={milkersImage} />,
+    shown: false,
+    url: undefined,
+    children: <Milkers />,
+    height: isMobile ? 400 : 600,
+    width: isMobile ? 300 : 600,
     show: isMobile ? true : true,
   },
   {
@@ -223,6 +237,7 @@ const Desktop: FC<DesktopProps> = ({}) => {
           </>
         ))}
       </div>
+      <img src={tickerMonero} className="ticker" />
     </DesktopSC>
   );
 };
