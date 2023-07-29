@@ -75,6 +75,7 @@ function App() {
       {fakeGayShown && (
         <Alert
           title="Do you accept the truth?"
+          style={{ zIndex: 5 }}
           message="Moon landing, fake and gay or real?"
           closeAlert={() => toggleFakeGayShown(false)}
           buttons={[

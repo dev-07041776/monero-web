@@ -11,7 +11,7 @@ const AboutMonero: FC<AboutMoneroProps> = ({}) => {
   return (
     <Frame boxShadow="in" bg="white" className="about">
       <div>
-        <div className="title">
+        <div className="title" style={{ marginBottom: 12 }}>
           <img src={textFirstLine} alt="img" />
           <img src={textSecondLine} alt="img" />
         </div>
@@ -19,6 +19,7 @@ const AboutMonero: FC<AboutMoneroProps> = ({}) => {
         <a href="https://app.uniswap.org/#/swap?&chain=mainnet&use=v2&outputCurrency=0x6A8A637331801981A0FB29aacc3afa732b072d55">
           BUY $MONERO
         </a>
+        <p>OrwellsArchive@protonmail.com</p>
 
         <p>
           In the realm of flat Earth truths, a web of deception has woven itself

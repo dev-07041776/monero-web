@@ -11,6 +11,7 @@ import mainLogo from "../../../../assets/png/logo.png";
 import tickerMonero from "../../../../assets/gif/tickermonero.gif";
 import fakelandingImage from "../../../../assets/png/landingicon.png";
 import titanicScam from "../../../../assets/png/titanic-scam.png";
+import alexJones from "../../../../assets/png/alexjones.png";
 import img1984 from "../../../../assets/jpg/1984.jpeg";
 import quake1Image from "../../../../assets/png/games/quake1.png";
 import quake2Image from "../../../../assets/png/games/quake2.png";
@@ -147,7 +148,7 @@ export const desktopItems = [
     children: <Quake />,
     height: isMobile ? 300 : 600,
     width: isMobile ? 350 : 800,
-    show: isMobile ? true : true,
+    show: isMobile ? false : true,
   },
   {
     title: "Quake 2",
@@ -157,7 +158,7 @@ export const desktopItems = [
     children: <Quake2 />,
     height: isMobile ? 300 : 600,
     width: isMobile ? 350 : 800,
-    show: isMobile ? true : true,
+    show: isMobile ? false : true,
   },
   {
     title: "Unreal Tournament",
@@ -167,7 +168,7 @@ export const desktopItems = [
     children: <UnrealTournament />,
     height: isMobile ? 300 : 600,
     width: isMobile ? 350 : 800,
-    show: isMobile ? true : true,
+    show: isMobile ? false : true,
   },
   {
     title: "Worms Armageddon",
@@ -218,6 +219,15 @@ export const desktopItems = [
     width: isMobile ? 350 : 800,
     show: isMobile ? true : true,
     children: <Paint />,
+  },
+  {
+    title: "Info Wars",
+    icon: <DesktopIconSC src={alexJones} />,
+    shown: false,
+    url: "https://www.infowars.com/",
+    height: isMobile ? 400 : 650,
+    width: isMobile ? 300 : 650,
+    show: isMobile ? true : true,
   },
 ];
 
