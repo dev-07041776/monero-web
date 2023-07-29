@@ -14,6 +14,7 @@ import titanicScam from "../../../../assets/png/titanic-scam.png";
 import alexJones from "../../../../assets/png/alexjones.png";
 import img1984 from "../../../../assets/jpg/1984.jpeg";
 import quake1Image from "../../../../assets/png/games/quake1.png";
+import sonicImage from "../../../../assets/png/games/sonic.png";
 import quake2Image from "../../../../assets/png/games/quake2.png";
 import unrealImage from "../../../../assets/png/games/unreal-tournament.png";
 import wormsImg from "../../../../assets/png/games/worms.png";
@@ -33,6 +34,7 @@ import Readme from "../../../modals/Readme";
 import UnrealTournament from "../../../modals/UnrealTournament";
 import Paint from "../../../modals/Paint";
 import Milkers from "../../../modals/Milkers";
+import Sonic from "../../../modals/Sonic";
 
 interface DesktopProps {}
 
@@ -148,6 +150,16 @@ export const desktopItems = [
     children: <Quake />,
     height: isMobile ? 300 : 600,
     width: isMobile ? 350 : 800,
+    show: isMobile ? false : true,
+  },
+  {
+    title: "Sonic Multiplayer",
+    icon: <img src={sonicImage} alt="Sonic" />,
+    shown: false,
+    url: undefined,
+    children: <Sonic />,
+    height: isMobile ? 300 : 510,
+    width: isMobile ? 350 : 900,
     show: isMobile ? false : true,
   },
   {
