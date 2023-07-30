@@ -35,8 +35,6 @@ import Readme from "../../../modals/Readme";
 import UnrealTournament from "../../../modals/UnrealTournament";
 import Paint from "../../../modals/Paint";
 import Milkers from "../../../modals/Milkers";
-import Sonic from "../../../modals/Sonic";
-import CartoonStrike from "../../../modals/CartoonStrike";
 
 interface DesktopProps {}
 
@@ -143,26 +141,6 @@ export const desktopItems = [
     height: isMobile ? 400 : 650,
     width: isMobile ? 300 : 650,
     show: isMobile ? true : true,
-  },
-  {
-    title: "Sonic Multiplayer",
-    icon: <img src={sonicImage} alt="Sonic" />,
-    shown: false,
-    url: undefined,
-    children: <Sonic />,
-    height: isMobile ? 300 : 510,
-    width: isMobile ? 350 : 900,
-    show: isMobile ? false : true,
-  },
-  {
-    title: "CStrike",
-    icon: <img src={cStrike} alt="Cartoon Strike" />,
-    shown: false,
-    url: undefined,
-    children: <CartoonStrike />,
-    height: isMobile ? 300 : 655,
-    width: isMobile ? 350 : 960,
-    show: isMobile ? false : true,
   },
   {
     title: "Quake 1",
