@@ -5,13 +5,12 @@ interface LemmingsProps {}
 const Lemmings: FC<LemmingsProps> = ({}) => {
   return (
     <iframe
-      id="Command and Conquer"
+      title="Lemmings"
+      id="Lemmings"
       src="https://emupedia.net/emupedia-game-lemmings1/?version=1&difficulty=1&level=1&speed=1&cheat=false"
       frameBorder="0"
       height={"100%"}
       allowTransparency={true}
-      allow="accelerometer; gyroscope; geolocation; microphone; camera; midi; encrypted-media; clipboard-read; clipboard-write"
-      sandbox="allow-forms allow-downloads allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
     />
   );
 };

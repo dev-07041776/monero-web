@@ -5,13 +5,12 @@ interface WormsProps {}
 const Worms: FC<WormsProps> = ({}) => {
   return (
     <iframe
+      title="Worms Armageddon"
       id="Command and Conquer"
       src="https://emupedia.net/emupedia-game-worms2/armageddon/#"
       frameBorder="0"
       height={"100%"}
       allowTransparency={true}
-      allow="accelerometer; gyroscope; geolocation; microphone; camera; midi; encrypted-media; clipboard-read; clipboard-write"
-      sandbox="allow-forms allow-downloads allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
     />
   );
 };
