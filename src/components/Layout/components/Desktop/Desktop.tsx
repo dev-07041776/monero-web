@@ -19,7 +19,7 @@ import quake2Image from "../../../../assets/png/games/quake2.png";
 import unrealImage from "../../../../assets/png/games/unreal-tournament.png";
 import wormsImg from "../../../../assets/png/games/worms.png";
 import ccImg from "../../../../assets/png/games/cc.png";
-import cc2Img from "../../../../assets/png/games/cc2.png";
+import avpImg from "../../../../assets/png/games/avp.png";
 import cStrike from "../../../../assets/png/games/cstrike.png";
 import lemmingsImg from "../../../../assets/png/games/lemmings.png";
 import AboutMonero from "../../../modals/AboutMonero";
@@ -37,6 +37,7 @@ import Paint from "../../../modals/Paint";
 import Milkers from "../../../modals/Milkers";
 import Sonic from "../../../modals/Sonic";
 import CartoonStrike from "../../../modals/CartoonStrike";
+import AlienVsPredator from "../../../modals/AlienVsPredator";
 
 interface DesktopProps {}
 
@@ -224,6 +225,16 @@ export const desktopItems = [
     height: isMobile ? 250 : 550,
     width: isMobile ? 350 : 800,
     show: isMobile ? true : true,
+  },
+  {
+    title: "Alien vs. Predator",
+    icon: <img src={avpImg} alt="Alien vs Predator" />,
+    shown: false,
+    url: undefined,
+    children: <AlienVsPredator />,
+    height: isMobile ? 250 : 450,
+    width: isMobile ? 350 : 600,
+    show: isMobile ? false : true,
   },
   {
     title: "Paint",
