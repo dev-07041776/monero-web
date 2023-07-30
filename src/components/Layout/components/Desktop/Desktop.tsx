@@ -11,13 +11,16 @@ import mainLogo from "../../../../assets/png/logo.png";
 import tickerMonero from "../../../../assets/gif/tickermonero.gif";
 import fakelandingImage from "../../../../assets/png/landingicon.png";
 import titanicScam from "../../../../assets/png/titanic-scam.png";
+import alexJones from "../../../../assets/png/alexjones.png";
 import img1984 from "../../../../assets/jpg/1984.jpeg";
 import quake1Image from "../../../../assets/png/games/quake1.png";
+import sonicImage from "../../../../assets/png/games/sonic.png";
 import quake2Image from "../../../../assets/png/games/quake2.png";
 import unrealImage from "../../../../assets/png/games/unreal-tournament.png";
 import wormsImg from "../../../../assets/png/games/worms.png";
 import ccImg from "../../../../assets/png/games/cc.png";
 import cc2Img from "../../../../assets/png/games/cc2.png";
+import cStrike from "../../../../assets/png/games/cstrike.png";
 import lemmingsImg from "../../../../assets/png/games/lemmings.png";
 import AboutMonero from "../../../modals/AboutMonero";
 import FlatEarth from "../../../modals/FlatEarth";
@@ -32,6 +35,8 @@ import Readme from "../../../modals/Readme";
 import UnrealTournament from "../../../modals/UnrealTournament";
 import Paint from "../../../modals/Paint";
 import Milkers from "../../../modals/Milkers";
+import Sonic from "../../../modals/Sonic";
+import CartoonStrike from "../../../modals/CartoonStrike";
 
 interface DesktopProps {}
 
@@ -140,6 +145,26 @@ export const desktopItems = [
     show: isMobile ? true : true,
   },
   {
+    title: "Sonic Multiplayer",
+    icon: <img src={sonicImage} alt="Sonic" />,
+    shown: false,
+    url: undefined,
+    children: <Sonic />,
+    height: isMobile ? 300 : 510,
+    width: isMobile ? 350 : 900,
+    show: isMobile ? false : true,
+  },
+  {
+    title: "CStrike",
+    icon: <img src={cStrike} alt="Cartoon Strike" />,
+    shown: false,
+    url: undefined,
+    children: <CartoonStrike />,
+    height: isMobile ? 300 : 655,
+    width: isMobile ? 350 : 960,
+    show: isMobile ? false : true,
+  },
+  {
     title: "Quake 1",
     icon: <img src={quake1Image} alt="Quake 1 Img" />,
     shown: false,
@@ -147,8 +172,9 @@ export const desktopItems = [
     children: <Quake />,
     height: isMobile ? 300 : 600,
     width: isMobile ? 350 : 800,
-    show: isMobile ? true : true,
+    show: isMobile ? false : true,
   },
+
   {
     title: "Quake 2",
     icon: <img src={quake2Image} alt="Quake 2 Img" />,
@@ -157,7 +183,7 @@ export const desktopItems = [
     children: <Quake2 />,
     height: isMobile ? 300 : 600,
     width: isMobile ? 350 : 800,
-    show: isMobile ? true : true,
+    show: isMobile ? false : true,
   },
   {
     title: "Unreal Tournament",
@@ -167,7 +193,7 @@ export const desktopItems = [
     children: <UnrealTournament />,
     height: isMobile ? 300 : 600,
     width: isMobile ? 350 : 800,
-    show: isMobile ? true : true,
+    show: isMobile ? false : true,
   },
   {
     title: "Worms Armageddon",
@@ -185,16 +211,6 @@ export const desktopItems = [
     shown: false,
     url: undefined,
     children: <Command />,
-    height: isMobile ? 300 : 600,
-    width: isMobile ? 350 : 800,
-    show: isMobile ? false : true,
-  },
-  {
-    title: "Yuri's Revenge",
-    icon: <img src={cc2Img} alt="C&C2: Yuri's Revenge" />,
-    shown: false,
-    url: undefined,
-    children: <Command2 />,
     height: isMobile ? 300 : 600,
     width: isMobile ? 350 : 800,
     show: isMobile ? false : true,
@@ -218,6 +234,15 @@ export const desktopItems = [
     width: isMobile ? 350 : 800,
     show: isMobile ? true : true,
     children: <Paint />,
+  },
+  {
+    title: "Info Wars",
+    icon: <DesktopIconSC src={alexJones} />,
+    shown: false,
+    url: "https://www.infowars.com/",
+    height: isMobile ? 400 : 650,
+    width: isMobile ? 300 : 650,
+    show: isMobile ? true : true,
   },
 ];
 
