@@ -24,9 +24,12 @@ import funny20 from "../../assets/jpg/funny20.jpeg";
 import funny21 from "../../assets/jpg/funny21.jpeg";
 import funny22 from "../../assets/jpg/funny22.jpeg";
 import funny23 from "../../assets/jpg/funny23.jpeg";
+import funny24 from "../../assets/jpg/funny24.jpeg";
+import { Tweet } from "react-tweet";
 
 const pics = [
   { img: funny1 },
+  { img: funny24 },
   { img: funny2 },
   { img: funny3 },
   { img: funny4 },
@@ -57,6 +60,17 @@ const FlatEarth: FC = () => {
       <div>
         <div className="title">
           <img src={tickerGay} alt="img" />
+        </div>
+        <div className="light">
+          <Tweet id="1686506479866503168" />
+          {/* <video
+            disablePictureInPicture
+            preload="none"
+            playsInline
+            style={{ width: "100%" }}
+            poster="https://pbs.twimg.com/ext_tw_video_thumb/1686506115369197568/pu/img/0B5e-cjSOJ2HZdXI.jpg"
+            src="https://twitter.com/i/status/1686506479866503168"
+          ></video> */}
         </div>
         <div className="pron-images">
           {pics.map((image, index) => {
