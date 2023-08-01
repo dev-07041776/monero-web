@@ -19,6 +19,8 @@ const AboutMonero: FC<AboutMoneroProps> = ({}) => {
         <a href="https://app.uniswap.org/#/swap?&chain=mainnet&use=v2&outputCurrency=0x6A8A637331801981A0FB29aacc3afa732b072d55">
           BUY $MONERO
         </a>
+        <p>ETH Token Contract: 0x6a8a637331801981a0fb29aacc3afa732b072d55</p>
+        <p>RoadMap to $6.9bn ( + ∞% )</p>
         <p>OrwellsArchive@protonmail.com</p>
 
         <p>

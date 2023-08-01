@@ -7,11 +7,12 @@ import dextoolsImage from "../../../../assets/png/dextools.png";
 import telegramImage from "../../../../assets/png/telegram.png";
 import twitterImage from "../../../../assets/png/twitter.png";
 import milkersImage from "../../../../assets/png/milkers.png";
-import mainLogo from "../../../../assets/png/logo.png";
+import mainLogo from "../../../../assets/jpg/logo.jpeg";
 import tickerMonero from "../../../../assets/gif/tickermonero.gif";
 import fakelandingImage from "../../../../assets/png/landingicon.png";
 import titanicScam from "../../../../assets/png/titanic-scam.png";
 import alexJones from "../../../../assets/png/alexjones.png";
+import truthIcon from "../../../../assets/png/memsicon.png";
 import img1984 from "../../../../assets/jpg/1984.jpeg";
 import quake1Image from "../../../../assets/png/games/quake1.png";
 import sonicImage from "../../../../assets/png/games/sonic.png";
@@ -55,13 +56,13 @@ export const desktopItems = [
     show: isMobile ? true : true,
   },
   {
-    title: "flat_earth.exe",
-    icon: <Earth />,
+    title: "truth.exe",
+    icon: <DesktopIconSC src={truthIcon} />,
     shown: false,
     url: undefined,
     children: <FlatEarth />,
-    height: isMobile ? 360 : 620,
-    width: isMobile ? 350 : 600,
+    height: isMobile ? 360 : 600,
+    width: isMobile ? 350 : 900,
     show: isMobile ? true : true,
   },
   {

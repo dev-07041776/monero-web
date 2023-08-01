@@ -41,6 +41,7 @@ body {
 .modal {
   /* Target only the immediate second child */
   & > *:nth-child(2) {
+    display: inline-block;
     height: 100%;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
