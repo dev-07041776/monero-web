@@ -8,6 +8,7 @@ const UnrealTournament: FC = ({}) => {
       src="https://emupedia.net/emupedia-game-unreal-tournament/"
       frameBorder="0"
       height={"100%"}
+      width={"100%"}
       allowTransparency={true}
     />
   );

@@ -10,6 +10,7 @@ const Command2: FC<CommandProps> = ({}) => {
       src="https://emupedia.net/emupedia-game-ra2/"
       frameBorder="0"
       height={"100%"}
+      width={"100%"}
       allowTransparency={true}
     />
   );

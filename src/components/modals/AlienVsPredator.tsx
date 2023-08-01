@@ -8,6 +8,7 @@ const AlienVsPredator: FC = () => {
       src="https://www.retrogames.cc/embed/7752-alien-vs-predator-940520-usa.html"
       frameBorder="0"
       height={"100%"}
+      width={"100%"}
       allowTransparency={true}
     />
   );

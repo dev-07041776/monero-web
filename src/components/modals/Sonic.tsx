@@ -8,6 +8,7 @@ const Sonic: FC = () => {
       src="https://v6p9d9t4.ssl.hwcdn.net/html/3962593/index.html"
       frameBorder="0"
       height={"100%"}
+      width={"100%"}
       allowTransparency={true}
     />
   );

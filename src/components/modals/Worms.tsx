@@ -10,6 +10,7 @@ const Worms: FC<WormsProps> = ({}) => {
       src="https://emupedia.net/emupedia-game-worms2/armageddon/#"
       frameBorder="0"
       height={"100%"}
+      width={"100%"}
       allowTransparency={true}
     />
   );

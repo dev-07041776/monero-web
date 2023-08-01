@@ -10,6 +10,7 @@ const Command: FC<CommandProps> = ({}) => {
       src="https://emupedia.net/emupedia-game-command-and-conquer1/"
       frameBorder="0"
       height={"100%"}
+      width={"100%"}
       allowTransparency={true}
     />
   );

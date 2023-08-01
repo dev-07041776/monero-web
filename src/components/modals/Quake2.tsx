@@ -10,6 +10,7 @@ const Quake2: FC<QuakeProps> = ({}) => {
       src="https://emupedia.net/emupedia-game-quake2/wasm.html"
       frameBorder="0"
       height={"100%"}
+      width={"100%"}
       allowTransparency={true}
     />
   );
