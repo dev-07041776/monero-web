@@ -89,10 +89,10 @@ const MintingModal: FC = () => {
                 alt={images[currentImageIndex].alt}
               />
               <p>
-                Monero Martians freemint eligibility criteria:
+                Monero Martians Phase 1 eligibility criteria:
                 <br />
-                25k $MONERO = 1 free mint | 40k $MONERO = 2 free mint | 75k
-                $MONERO = 3 free mint
+                25k $MONERO = 1 free mint | 40k $MONERO = 2 free mints | 75k
+                $MONERO = 3 free mints
               </p>
               <div className="settings">
                 <Fieldset legend="Connection Settings">

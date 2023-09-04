@@ -35,6 +35,10 @@ export const MintingModalSC = styled.div`
   img {
     max-width: 200px;
     margin: auto;
+
+    @media (max-width: 768px) {
+      max-width: 100px;
+    }
   }
 
   form,
@@ -55,6 +59,10 @@ export const MintingModalSC = styled.div`
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr 1fr;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   .bouncing-overlay {
