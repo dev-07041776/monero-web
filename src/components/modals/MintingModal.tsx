@@ -21,7 +21,8 @@ import nft9 from "../../assets/png/nft/preview/preview9.png";
 import nft10 from "../../assets/png/nft/preview/preview10.png";
 import nft11 from "../../assets/png/nft/preview/preview11.png";
 import nft12 from "../../assets/png/nft/preview/preview12.png";
-import { MintingModalSC } from "./Modals.styled";
+import { BouncingImageSC, MintingModalSC } from "./Modals.styled";
+import logo from "../../assets/png/logo.png";
 
 const images = [
   { alt: "NFT", img: nft1 },
@@ -73,122 +74,136 @@ const MintingModal: FC = () => {
   };
 
   return (
-    <MintingModalSC>
-      <Tabs defaultActiveTab="General">
-        <Tab title="General">
-          <form>
-            <img
-              src={images[currentImageIndex].img}
-              alt={images[currentImageIndex].alt}
-            />
-            <p>
-              Monero Martians freemint eligibility criteria:
-              <br />
-              25k $MONERO = 1 free mint | 40k $MONERO = 2 free mint | 75k
-              $MONERO = 3 free mint
+    <>
+      <div className="bouncing-overlay">
+        <BouncingImageSC>
+          <img src={logo} alt={"logo"} />
+        </BouncingImageSC>
+      </div>
+      <MintingModalSC>
+        <Tabs defaultActiveTab="General">
+          <Tab title="General">
+            <form>
+              <img
+                src={images[currentImageIndex].img}
+                alt={images[currentImageIndex].alt}
+              />
+              <p>
+                Monero Martians freemint eligibility criteria:
+                <br />
+                25k $MONERO = 1 free mint | 40k $MONERO = 2 free mint | 75k
+                $MONERO = 3 free mint
+              </p>
+              <div className="settings">
+                <Fieldset legend="Connection Settings">
+                  <label htmlFor="dropdown">Type:</label>
+                  <Dropdown
+                    id="dropdown"
+                    options={Object.values(EConnectionType)}
+                    defaultValue={EConnectionType.Metamask}
+                    onChange={handleDropdownChange}
+                  />
+                  <label htmlFor="address">Address:</label>
+                  <Input
+                    placeholder="Connect wallet..."
+                    id="address"
+                    disabled
+                  />
+                </Fieldset>
+                <Fieldset legend="Quantity">
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "0.5rem",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <p>1</p>
+
+                    <Range
+                      type="range"
+                      min="1"
+                      max="3"
+                      style={{ background: "none" }}
+                      value={mintQty.toString()}
+                      onChange={handleSliderChange}
+                      id="qtyRange"
+                    />
+
+                    <p>3</p>
+                  </div>
+
+                  <Checkbox
+                    checked={mintQty === mintsRemaining}
+                    onChange={(e) => {
+                      if ((e.target as HTMLInputElement).checked) {
+                        setMintQty(mintsRemaining);
+                      }
+                    }}
+                  >
+                    Mint maximum
+                  </Checkbox>
+                  <p style={{ textAlign: "center" }}>
+                    {mintsRemaining} free mints left
+                  </p>
+                </Fieldset>
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <p style={{ margin: 0 }}>
+                  View collection on <a>Opensea</a>
+                </p>
+                <Button
+                  disabled={mintQty > mintsRemaining || !connectedAddress}
+                  type="submit"
+                  style={{
+                    maxWidth: "150px",
+                    width: "100%",
+                    alignSelf: "flex-end",
+                  }}
+                >
+                  Mint
+                </Button>
+              </div>
+            </form>
+          </Tab>
+          <Tab title="Details">
+            <p
+              style={{
+                marginTop: 0,
+                marginBottom: "1.6em",
+                maxWidth: "500px",
+              }}
+            >
+              If you have problems with this program and it worked correctly on
+              an earlier version of Windows, select the compatibility mode that
+              matches that earlier version.
             </p>
+
             <div className="settings">
-              <Fieldset legend="Connection Settings">
+              <Fieldset legend="Collection Details">
                 <label htmlFor="dropdown">Type:</label>
                 <Dropdown
                   id="dropdown"
-                  options={Object.values(EConnectionType)}
-                  defaultValue={EConnectionType.Metamask}
-                  onChange={handleDropdownChange}
+                  options={["Metamask", "WalletConnect"]}
                 />
                 <label htmlFor="address">Address:</label>
                 <Input placeholder="Connect wallet..." id="address" disabled />
               </Fieldset>
-              <Fieldset legend="Quantity">
-                <div
-                  style={{
-                    display: "flex",
-                    gap: "0.5rem",
-                    justifyContent: "space-between",
-                  }}
-                >
-                  <p>1</p>
-
-                  <Range
-                    type="range"
-                    min="1"
-                    max="3"
-                    style={{ background: "none" }}
-                    value={mintQty.toString()}
-                    onChange={handleSliderChange}
-                    id="qtyRange"
-                  />
-
-                  <p>3</p>
-                </div>
-
-                <Checkbox
-                  checked={mintQty === mintsRemaining}
-                  onChange={(e) => {
-                    if ((e.target as HTMLInputElement).checked) {
-                      setMintQty(mintsRemaining);
-                    }
-                  }}
-                >
-                  Mint maximum
-                </Checkbox>
-                <p style={{ textAlign: "center" }}>
-                  {mintsRemaining} free mints left
-                </p>
-              </Fieldset>
+              <Fieldset legend="Contract"></Fieldset>
             </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-              <p style={{ margin: 0 }}>
-                View collection on <a>Opensea</a>
-              </p>
-              <Button
-                disabled={mintQty > mintsRemaining || !connectedAddress}
-                type="submit"
-                style={{
-                  maxWidth: "150px",
-                  width: "100%",
-                  alignSelf: "flex-end",
-                }}
-              >
-                Mint
-              </Button>
-            </div>
-          </form>
-        </Tab>
-        <Tab title="Details">
-          <p
-            style={{
-              marginTop: 0,
-              marginBottom: "1.6em",
-              maxWidth: "500px",
-            }}
-          >
-            If you have problems with this program and it worked correctly on an
-            earlier version of Windows, select the compatibility mode that
-            matches that earlier version.
-          </p>
-
-          <div className="settings">
-            <Fieldset legend="Collection Details">
-              <label htmlFor="dropdown">Type:</label>
-              <Dropdown id="dropdown" options={["Metamask", "WalletConnect"]} />
-              <label htmlFor="address">Address:</label>
-              <Input placeholder="Connect wallet..." id="address" disabled />
-            </Fieldset>
-            <Fieldset legend="Contract"></Fieldset>
-          </div>
-        </Tab>
-        {/* <Tab title="History">
+          </Tab>
+          {/* <Tab title="History">
   
         </Tab> */}
-      </Tabs>
-    </MintingModalSC>
+        </Tabs>
+      </MintingModalSC>
+    </>
   );
 };
 

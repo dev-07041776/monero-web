@@ -7,7 +7,7 @@ import dextoolsImage from "../../../../assets/png/dextools.png";
 import telegramImage from "../../../../assets/png/telegram.png";
 import twitterImage from "../../../../assets/png/twitter.png";
 import milkersImage from "../../../../assets/png/milkers.png";
-import mainLogo from "../../../../assets/jpg/logo.jpeg";
+import mainLogo from "../../../../assets/png/logo.png";
 import tickerMonero from "../../../../assets/gif/tickermonero.gif";
 import fakelandingImage from "../../../../assets/png/landingicon.png";
 import titanicScam from "../../../../assets/png/titanic-scam.png";
