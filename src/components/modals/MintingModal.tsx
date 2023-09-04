@@ -23,6 +23,9 @@ import nft11 from "../../assets/png/nft/preview/preview11.png";
 import nft12 from "../../assets/png/nft/preview/preview12.png";
 import { BouncingImageSC, MintingModalSC } from "./Modals.styled";
 import logo from "../../assets/png/logo.png";
+import seal from "../../assets/gif/seal.gif";
+import dialUp from "../../assets/mp3/dial-up.mp3";
+const dialUpSound = new Audio(dialUp);
 
 const images = [
   { alt: "NFT", img: nft1 },
@@ -71,6 +74,10 @@ const MintingModal: FC = () => {
 
   const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMintQty(Number(event.target.value));
+  };
+
+  const handleClick = () => {
+    dialUpSound.play();
   };
 
   return (
@@ -148,29 +155,31 @@ const MintingModal: FC = () => {
                   </p>
                 </Fieldset>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-                <p style={{ margin: 0 }}>
-                  View collection on <a>Opensea</a>
-                </p>
-                <Button
-                  disabled={mintQty > mintsRemaining || !connectedAddress}
-                  type="submit"
-                  style={{
-                    maxWidth: "150px",
-                    width: "100%",
-                    alignSelf: "flex-end",
-                  }}
-                >
-                  Mint
-                </Button>
-              </div>
             </form>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginTop: "1rem",
+              }}
+            >
+              <p style={{ margin: 0 }}>
+                View collection on <a>Opensea</a>
+              </p>
+              <Button
+                //   disabled={mintQty > mintsRemaining || !connectedAddress}
+
+                style={{
+                  maxWidth: "150px",
+                  width: "100%",
+                  alignSelf: "flex-end",
+                }}
+                onClick={handleClick}
+              >
+                Mint
+              </Button>
+            </div>
           </Tab>
           <Tab title="Details">
             <p
@@ -199,6 +208,7 @@ const MintingModal: FC = () => {
                   id="authenticity"
                   disabled
                 />
+                <img src={seal} alt="authentic" />
               </Fieldset>
             </div>
           </Tab>

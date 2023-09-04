@@ -24,10 +24,12 @@ export const BouncingImageSC = styled.div`
   animation: ${bounce} 10s linear infinite;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 
   img {
     width: 75px;
     animation: ${rotate} 1.5s linear infinite;
+    pointer-events: none;
   }
 `;
 
