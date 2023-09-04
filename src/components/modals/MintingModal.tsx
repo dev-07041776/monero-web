@@ -180,22 +180,26 @@ const MintingModal: FC = () => {
                 maxWidth: "500px",
               }}
             >
-              If you have problems with this program and it worked correctly on
-              an earlier version of Windows, select the compatibility mode that
-              matches that earlier version.
+              Monero Martians is the greatest NFT collection the world has ever
+              seen with extremely early BAYC vibes. Smart people will have and
+              want these NFTs, they are your admission to the big brain club.
             </p>
 
             <div className="settings">
-              <Fieldset legend="Collection Details">
-                <label htmlFor="dropdown">Type:</label>
-                <Dropdown
-                  id="dropdown"
-                  options={["Metamask", "WalletConnect"]}
-                />
-                <label htmlFor="address">Address:</label>
-                <Input placeholder="Connect wallet..." id="address" disabled />
+              <Fieldset legend="Tokenomics">
+                <label htmlFor="totalSupply">Total Supply:</label>
+                <Input placeholder="1,000" id="totalSupply" disabled />
+                <label htmlFor="royalty">Royalty:</label>
+                <Input placeholder="5%" id="royalty" disabled />
               </Fieldset>
-              <Fieldset legend="Contract"></Fieldset>
+              <Fieldset legend="Other Details">
+                <label htmlFor="authenticity">Authenticity:</label>
+                <Input
+                  placeholder="NOT FAKE OR GAY"
+                  id="authenticity"
+                  disabled
+                />
+              </Fieldset>
             </div>
           </Tab>
           {/* <Tab title="History">
