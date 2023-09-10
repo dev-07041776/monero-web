@@ -22,6 +22,7 @@ const dialUpSound = new Audio(dialUp);
 
 const MintingModalContent: FC = () => {
   const [mintQty, setMintQty] = useState(1);
+  const [publicQty, setPublicQty] = useState(1);
   const [connectionType, setConnectionType] = useState<EConnectionType>(
     EConnectionType.Metamask
   );
@@ -30,6 +31,7 @@ const MintingModalContent: FC = () => {
   const [provider, setProvider] =
     useState<ethers.providers.Web3Provider | null>(null);
   const [contract, setContract] = useState<ethers.Contract | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (window.ethereum) {
@@ -65,6 +67,7 @@ const MintingModalContent: FC = () => {
   }, []);
 
   const allowListMint = async (numTokens: number) => {
+    setIsLoading(true);
     if (!provider || !contract) return;
     dialUpSound.play();
     const signer = provider.getSigner();
@@ -77,6 +80,10 @@ const MintingModalContent: FC = () => {
       } else {
         console.error(error);
       }
+    } finally {
+      dialUpSound.pause();
+      dialUpSound.currentTime = 0;
+      setIsLoading(false);
     }
   };
 
@@ -85,6 +92,7 @@ const MintingModalContent: FC = () => {
       console.error("Provider or contract is not initialized");
       return;
     }
+    setIsLoading(true);
 
     try {
       dialUpSound.play();
@@ -103,6 +111,10 @@ const MintingModalContent: FC = () => {
       });
     } catch (error: any) {
       console.error("Error while minting tokens:", error.message);
+    } finally {
+      dialUpSound.pause();
+      dialUpSound.currentTime = 0;
+      setIsLoading(false);
     }
   };
 
@@ -114,6 +126,12 @@ const MintingModalContent: FC = () => {
 
   const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMintQty(Number(event.target.value));
+  };
+
+  const handlePublicSliderChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setPublicQty(Number(event.target.value));
   };
 
   const checkAllowlist = () => {
@@ -267,7 +285,8 @@ const MintingModalContent: FC = () => {
               disabled={
                 mintQty > mintsElegible ||
                 !window.ethereum ||
-                mintsElegible === 0
+                mintsElegible === 0 ||
+                isLoading
               }
               style={{
                 maxWidth: "150px",
@@ -276,18 +295,150 @@ const MintingModalContent: FC = () => {
               }}
               onClick={() => allowListMint(mintQty)}
             >
-              Mint
+              {isLoading ? "Loading..." : "Mint"}
             </Button>
           </div>
         </Tab>
         <Tab
           title="Public Mint"
+          //   TODO SET TO FALSE WHEN PUBLIC OPEN
           disabled={true}
           style={{
             color: "rgb(134, 138, 142)",
             backgroundColor: "rgb(195, 199, 203)",
           }}
-        ></Tab>
+        >
+          <form>
+            <div className="monitor">
+              <img src={mintAnimation} alt="Minting animation" />
+            </div>
+
+            <p>Public mint price: 0.01 ETH</p>
+            <div className="settings">
+              <Fieldset legend="Connection Settings">
+                <label htmlFor="dropdown">Type:</label>
+                <Dropdown
+                  id="dropdown"
+                  options={Object.values(EConnectionType)}
+                  defaultValue={EConnectionType.Metamask}
+                  onChange={handleDropdownChange}
+                />
+                <label htmlFor="address">Connected Address:</label>
+                {window.ethereum && connectedAddress ? (
+                  <Input
+                    placeholder="Connect wallet..."
+                    id="address"
+                    disabled
+                    style={{ color: "green" }}
+                    value={`${connectedAddress.slice(
+                      0,
+                      8
+                    )}...${connectedAddress.slice(-8)}`}
+                  />
+                ) : (
+                  <Button
+                    onClick={async () => {
+                      if (window.ethereum) {
+                        try {
+                          // Request account access
+                          await window.ethereum.request({
+                            method: "eth_requestAccounts",
+                          });
+                        } catch (error) {
+                          console.error("User denied account access");
+                        }
+                      } else {
+                        console.log(
+                          "Non-Ethereum browser detected. Please install MetaMask!"
+                        );
+                      }
+                    }}
+                  >
+                    Connect Wallet
+                  </Button>
+                )}
+              </Fieldset>
+              <Fieldset legend="Quantity">
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "0.5rem",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <p>1</p>
+
+                  <Range
+                    type="range"
+                    min="1"
+                    max="15"
+                    style={{ background: "none" }}
+                    value={publicQty.toString()}
+                    onChange={handlePublicSliderChange}
+                    id="qtyRange"
+                  />
+
+                  <p>15</p>
+                </div>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    alignItems: "center",
+                  }}
+                >
+                  <div style={{ maxWidth: 75 }}>
+                    <label htmlFor="address">Qty:</label>
+                    <Input
+                      disabled
+                      style={{
+                        width: "100%",
+                      }}
+                      value={publicQty}
+                    />
+                  </div>
+                  <div style={{ maxWidth: 75 }}>
+                    <label htmlFor="address">Cost:</label>
+                    <Input
+                      disabled
+                      style={{
+                        width: "100%",
+                      }}
+                      value={publicQty * 0.01 + " ETH"}
+                    />
+                  </div>
+                </div>
+              </Fieldset>
+            </div>
+          </form>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginTop: "1rem",
+            }}
+          >
+            {/* TODO CHANGE OPENSEA LINK */}
+            <p style={{ margin: 0 }}>
+              View collection on{" "}
+              <a href="https://opensea.io/collection/boredapeyachtclub">
+                Opensea
+              </a>
+            </p>
+            <Button
+              disabled={!window.ethereum || isLoading}
+              style={{
+                maxWidth: "150px",
+                width: "100%",
+                alignSelf: "flex-end",
+              }}
+              onClick={() => publicMint(publicQty)}
+            >
+              {isLoading ? "Loading..." : "Mint"}
+            </Button>
+          </div>
+        </Tab>
         <Tab title="Details">
           <p
             style={{
