@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Alert, Button } from "@react95/core";
-import { useClippy } from "@react95/clippy";
 import Layout from "./components/Layout";
 import gayFrogsSfx from "./assets/mp3/gay-frogs.mp3";
 import yRUGaySfx from "./assets/mp3/why-are-you-gay.mp3";
@@ -10,13 +9,6 @@ const yRUGaySound = new Audio(yRUGaySfx);
 function App() {
   const [fakeGayShown, toggleFakeGayShown] = React.useState(true);
   const [bsod, toggleBsod] = React.useState(false);
-  const { clippy } = useClippy();
-
-  useEffect(() => {
-    if (clippy) {
-      clippy.play("GetAttention");
-    }
-  }, [clippy]);
 
   const BSOD = () => {
     return (

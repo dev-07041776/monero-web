@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider, GlobalStyle } from "@react95/core";
-import { ClippyProvider } from "@react95/clippy";
 import "@react95/icons/icons.css";
 import "./index.css";
 import App from "./App";
@@ -12,9 +11,8 @@ ReactDOM.render(
     <ThemeProvider>
       <>
         <GlobalStyle />
-        <ClippyProvider>
-          <App />
-        </ClippyProvider>
+
+        <App />
       </>
     </ThemeProvider>
   </React.StrictMode>,

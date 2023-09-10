@@ -47,20 +47,6 @@ const AppButton: FC<AppButtonProps> = ({
           title={title}
           closeModal={handleCloseModal}
           children={children}
-          defaultPosition={{
-            x: -12,
-            y: 24,
-          }}
-          //   buttons={[
-          //     {
-          //       value: "Ok",
-          //       onClick: handleButtonClick,
-          //     },
-          //     {
-          //       value: "Cancel",
-          //       onClick: handleButtonClick,
-          //     },
-          //   ]}
         />
       )}
     </>

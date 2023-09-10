@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import bgGif from "../../../../assets/gif/believe.gif";
 import bgImg from "../../../../assets/jpg/bg.jpg";
 
 export const DesktopSC = styled.div`
@@ -49,7 +48,7 @@ export const DesktopSC = styled.div`
     width: 100%;
     max-width: 200px;
     z-index: 3;
-    position: relative;
+    position: inherit;
   }
 
   .readme {

@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import monitorPng from "../../assets/png/monitor.png";
 
 const bounce = keyframes`
   0% { transform: translate(0%, 0%); }
@@ -34,12 +35,44 @@ export const BouncingImageSC = styled.div`
 `;
 
 export const MintingModalSC = styled.div`
-  img {
-    max-width: 200px;
+  .monitor {
+    background-image: url(${monitorPng});
+    height: 235px;
+    width: 260px;
+    background-size: contain;
+    background-repeat: no-repeat;
     margin: auto;
+    position: relative;
 
-    @media (max-width: 768px) {
+    img {
+      position: absolute;
+      top: 26px;
+      right: 26px;
+      width: 207px;
+      height: 150px;
+      size: contain;
+    }
+
+    @media only screen and (max-width: 768px) {
+      height: 150px;
+      width: 165px;
+
+      img {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        width: 130px;
+        height: 95px;
+        size: contain;
+      }
+    }
+  }
+
+  .authenticity {
+    @media only screen and (max-width: 768px) {
       max-width: 100px;
+      margin: auto;
+      padding-top: 0.5rem;
     }
   }
 
