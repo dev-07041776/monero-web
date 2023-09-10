@@ -70,6 +70,8 @@ export const DesktopSC = styled.div`
   }
 
   .about {
+    overflow-y: scroll;
+    height: 100%;
     .title {
       display: flex;
       align-items: center;
@@ -109,7 +111,14 @@ export const DesktopSC = styled.div`
     }
   }
 
+  .readme {
+    overflow-y: scroll;
+    height: 100%;
+  }
+
   .milkers {
+    overflow-y: scroll;
+    height: 100%;
     .pron-images {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
