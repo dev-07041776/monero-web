@@ -10,24 +10,12 @@ import {
   Tab,
 } from "@react95/core";
 import nftAbi from "../../../nftContractABI.json";
-// import Web3 from "web3";
 import { EConnectionType } from "../MintingModal";
 import { MintingModalSC } from "../Modals.styled";
 import mintAnimation from "../../../assets/png/nft/mint-holo_optim.gif";
 import { ethers } from "ethers";
 import seal from "../../../assets/gif/seal.gif";
 import dialUp from "../../../assets/mp3/dial-up.mp3";
-import nft1 from "../../../assets/png/nft/preview/preview1.png";
-import nft2 from "../../../assets/png/nft/preview/preview2.png";
-import nft3 from "../../../assets/png/nft/preview/preview3.png";
-import nft4 from "../../../assets/png/nft/preview/preview4.png";
-import nft5 from "../../../assets/png/nft/preview/preview5.png";
-import nft6 from "../../../assets/png/nft/preview/preview6.png";
-import nft7 from "../../../assets/png/nft/preview/preview7.png";
-import nft9 from "../../../assets/png/nft/preview/preview9.png";
-import nft10 from "../../../assets/png/nft/preview/preview10.png";
-import nft11 from "../../../assets/png/nft/preview/preview11.png";
-import nft12 from "../../../assets/png/nft/preview/preview12.png";
 import { allowlist } from "../../../components/data/allowlist";
 
 const dialUpSound = new Audio(dialUp);
