@@ -210,7 +210,7 @@ const MintingModalContent: FC = () => {
 
   const handleCloseSuccessAlert = () => {
     toggleShowSuccess(false);
-    const openseaUrl = `https://opensea.io/assets/monero-martians?search[owner]=${connectedAddress}`;
+    const openseaUrl = `https://opensea.io/account?search[collections][0]=monero-martians&search[account]=${connectedAddress}`;
     window.open(openseaUrl, "_blank");
   };
 
@@ -572,7 +572,7 @@ const MintingModalContent: FC = () => {
       <InfoModal
         alertType={EAlertTypes.info}
         title="Minting Successful"
-        message="Your mint was successful. Please check your OpenSea for your new NFT."
+        message="Your mint was successful. See your Martians on OpenSea!"
         handleCloseAlert={handleCloseSuccessAlert}
         showAlert={showSuccess}
         withSound={false}
