@@ -530,6 +530,22 @@ const MintingModalContent: FC = () => {
                   id="ca"
                   disabled
                 />
+                <div style={{ display: "flex", gap: 8 }}>
+                  <a
+                    href="https://etherscan.io/address/0x29c2b61709153e93635a1f155c1060e8f680ea2b#code"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Contract Code
+                  </a>
+                  <a
+                    href="https://github.com/dev-07041776/monero-web"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Fontend Github
+                  </a>
+                </div>
               </Fieldset>
               <Fieldset legend="Other Details">
                 <label htmlFor="authenticity">Authenticity:</label>
