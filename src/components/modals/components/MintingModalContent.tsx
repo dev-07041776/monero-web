@@ -193,11 +193,16 @@ const MintingModalContent: FC = () => {
         user.HolderAddress.toLowerCase() === connectedAddress?.toLowerCase()
     );
     if (!user) return 0;
-    if (user.Balance > 100000) return 3;
-    if (user.Balance > 50000) return 2;
-    if (user.Balance > 10000) return 1;
+    if (user.Balance >= 100000) return 3;
+    if (user.Balance >= 50000) return 2;
+    if (user.Balance >= 10000) return 1;
     return 0;
   };
+
+  useEffect(() => {
+    const eligibleMints = checkAllowlist();
+    setMintsElegible(eligibleMints);
+  }, [connectedAddress]);
 
   useEffect(() => {
     setMintQty(checkAllowlist());
